@@ -1,10 +1,10 @@
 # Compiler and flags
 CXX = g++
-CXXFLAGS = -Wall -Wextra -O2 -std=c++17 -Iinclude
+CXXFLAGS = -Wall -Wextra -O2 -std=c++17 -I./basic/inc
 
 # Directories
 SRC_DIR = basic/src
-INC_DIR = basic/include
+INC_DIR = basic/inc
 BUILD_DIR = build
 BIN_DIR = bin
 
