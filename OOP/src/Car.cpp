@@ -1,6 +1,7 @@
 #include "Car.h"
 #include<iostream>
 
+int Car::totalCount =0;
 void Car::FillFuel(float amount)
 {
     fuel = amount;
@@ -30,12 +31,9 @@ void Car::Dashboard() const
     
 }
 
-Car::Car()
+Car::Car(): Car(0)
 {
-    std::cout<<"Car()"<<"\n";
-    fuel =0;
-    speed =0;
-    passengers=0;
+
 }
 
 Car::~Car()
@@ -43,7 +41,13 @@ Car::~Car()
     std::cout<<"~Car()"<<"\n";
 }
 
-Car::Car(float amount) :fuel(amount), speed(0), passengers(0)
+Car::Car(float amount):Car(amount,0)
 {
     std::cout<<"param Car()"<<"\n";
+}
+
+Car::Car(float amount, int pass): fuel(amount), passengers(pass), speed(0)
+{
+    ++totalCount;
+    
 }

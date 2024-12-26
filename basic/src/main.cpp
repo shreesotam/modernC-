@@ -6,7 +6,7 @@
 #include <Integer.h>
 
 int main() {
-    Car car(10);
+    Car car;
     car.Dashboard();
     car.FillFuel(6);
     car.Accelerate();
