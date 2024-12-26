@@ -48,3 +48,16 @@ void Fact(int &a, int &result)
     }
     result =temp;
 }
+
+Integer Add(const Integer &a, const Integer &b)
+{
+    Integer temp;
+    temp.SetValue(a.GetValue()+b.GetValue());
+    return temp;
+}
+
+Number CreateNumber(int num)
+{
+    Number n{3};
+    return n;
+}
