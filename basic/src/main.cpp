@@ -2,26 +2,23 @@
 #include <basic.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <Car.h>
+#include <Integer.h>
 
 int main() {
-    //int *p = (int*)calloc(1,sizeof(int));
-    //int *p = (int*)malloc(sizeof(int));
-    //int *p = new int;
-    int *p = new int[5];
-    for(int i=0;i<5;i++)
-    {
-        p[i] = i;
-        std::cout<<"p: "<<p[i]<<std::endl;
-        //std::cout<<"p: "<<*p<<std::endl;
-    }
-    
-    
-    
-    delete []p;
-    
-    //free(p);
-    p=NULL;
-    //std::cout<<"p: "<<p<<std::endl;
-    //std::cout<<"p: "<<*p<<std::endl;
+    Car car(10);
+    car.Dashboard();
+    car.FillFuel(6);
+    car.Accelerate();
+    car.Accelerate();
+    car.Accelerate();
+    car.Accelerate();
+    const Car car2(10);
+    car2.Dashboard();
+    std::cout<<"==============================================================================="<<"\n";
+    Integer i(5);
+    Integer i2(i);
+    std::cout<<i.GetValue()<<"\n";
+    //std::cout<<i.SetValue()<<"\n";
     return 0;
 }
