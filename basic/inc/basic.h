@@ -1,6 +1,7 @@
 #include"Integer.h"
 #include "Number.h"
 #include <memory>
+#include "Account.h"
 
 int Add(int *a, int *b);
 void AddVal(int *a, int *b, int *result);
@@ -20,3 +21,5 @@ void operate(int val);
 Integer *Getpointer(int val);
 void Display(Integer *p);
 void Store(std::unique_ptr<Integer> p);
+
+void Transact(Account* acc);

@@ -128,3 +128,14 @@ void Store(std::unique_ptr<Integer> p)
 {
     std::cout<<"storing"<<p->GetValue()<<"\n";
 }
+
+void Transact(Account *acc)
+{
+    std::cout<<"Transact started"<<"\n";
+    std::cout<<"Intial bal: "<<acc->GetBalance()<<"\n";
+    acc->Deposite(100);
+    std::cout<<"after deposite bal: "<<acc->GetBalance()<<"\n";
+    acc->AccumlateInterest();
+    acc->Withdraw(170);
+    std::cout<<"final bal: "<<acc->GetBalance()<<"\n";
+}

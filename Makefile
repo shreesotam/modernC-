@@ -10,11 +10,11 @@ BIN_DIR = bin
 TARGET = $(BIN_DIR)/app
 
 # Source and header files
-SRC_FILES = basic/src/basic.cpp basic/src/main.cpp OOP/src/Car.cpp OOP/src/Integer.cpp OOP/src/Number.cpp OOP/src/Project.cpp
+SRC_FILES = basic/src/basic.cpp basic/src/main.cpp OOP/src/Car.cpp OOP/src/Integer.cpp OOP/src/Number.cpp OOP/src/Project.cpp OOP/Bank/src/Account.cpp OOP/Bank/src/Checking.cpp OOP/Bank/src/Saving.cpp
 OBJ_FILES = $(SRC_FILES:.cpp=.o)
 
 # Include directories
-INC_DIRS = basic/inc OOP/inc
+INC_DIRS = basic/inc OOP/inc OOP/Bank/inc
 INC_FLAGS = $(addprefix -I, $(INC_DIRS))
 
 # Default target
