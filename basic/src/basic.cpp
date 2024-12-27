@@ -67,3 +67,36 @@ Number CreateNumber(int num)
     Number n{3};
     return n;
 }
+
+void operate(int val)
+{
+    Integer *p = Getpointer(val);
+    if (p==nullptr)
+    {
+        p = new Integer{val};
+    }
+    p->SetValue(100);
+    Display(p);
+    delete p;
+    p =nullptr;
+    p = new Integer{};
+    *p =__LINE__;
+    Display(p);
+    delete p;
+
+}
+
+Integer *Getpointer(int val)
+{
+    Integer *p = new Integer{val};
+    return p;
+}
+
+void Display(Integer *p)
+{
+    if(!p)
+    {
+        return;
+    }
+    std::cout<<p->GetValue()<<std::endl;
+}

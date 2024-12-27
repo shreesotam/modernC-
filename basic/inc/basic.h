@@ -12,3 +12,6 @@ void Fact(int &a, int &result);
 Integer Add(const Integer &a, const Integer &b);
 Integer Add(int a, int b);
 Number CreateNumber(int num);
+void operate(int val);
+Integer *Getpointer(int val);
+void Display(Integer *p);

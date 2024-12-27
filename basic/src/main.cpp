@@ -27,21 +27,7 @@ std::istream & operator >>(std::istream &input, const Integer &a)
 }
 
 int main() {
-    Integer a(1),b(3);
-    Integer sum = a+b;
-    Integer sum1 = 5+a;
-    //sum++;
-    std::cout<<"Sum1: "<<sum1<<std::endl;
-    std::cout<<"Sum: "<<sum++.GetValue()<<std::endl;
-    if(a==b)
-    {
-        std::cout<<"same "<<std::endl;
-    }
-    else
-    {
-        std::cout<<"not same "<<std::endl;
-    }
-    a();
+    operate(5);
 
     return 0;
 }
