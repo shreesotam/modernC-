@@ -8,5 +8,5 @@ class Checking: public Account
     //using Account::Account;
     //Checking(const std::string &name, float balance);
     ~Checking();
-    void Withdraw(float amount);
+    void Withdraw(float amount)override;
 };
