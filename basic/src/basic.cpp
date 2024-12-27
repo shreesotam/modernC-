@@ -56,6 +56,12 @@ Integer Add(const Integer &a, const Integer &b)
     return temp;
 }
 
+Integer Add(int a, int b)
+{
+    Integer temp(a+b);
+    return temp;
+}
+
 Number CreateNumber(int num)
 {
     Number n{3};

@@ -36,7 +36,7 @@ Integer::Integer(const Integer &value)
     mPInt = new int(*value.mPInt);   
 }
 
-Integer::Integer(Integer &&obj) //shallow copy
+Integer::Integer(Integer &&obj) //shallow copy. move constructor
 {
     std::cout<<"Integer (Integer &&obj)"<<std::endl;
     mPInt=obj.mPInt; //no new address but same address referenced
@@ -65,4 +65,34 @@ Integer &Integer::operator=(Integer &&obj)
     mPInt = obj.mPInt;
     obj.mPInt = nullptr;
     return *this;
+}
+
+Integer Integer::operator+(const Integer &a)const
+{
+    Integer temp;
+    *temp.mPInt = *mPInt+*a.mPInt;
+    return temp;
+}
+
+Integer &Integer::operator++()
+{
+    ++(*mPInt);
+    return *this;
+}
+
+Integer Integer::operator++(int)
+{
+    Integer temp(*this);
+    ++(*mPInt);
+    return temp;
+}
+
+bool Integer::operator==(const Integer &obj)const
+{
+    return *mPInt==*obj.mPInt;
+}
+
+void Integer::operator()()
+{
+    std::cout<<*mPInt<<std::endl;
 }
