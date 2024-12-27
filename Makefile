@@ -10,7 +10,7 @@ BIN_DIR = bin
 TARGET = $(BIN_DIR)/app
 
 # Source and header files
-SRC_FILES = basic/src/basic.cpp basic/src/main.cpp OOP/src/Car.cpp OOP/src/Integer.cpp OOP/src/Number.cpp
+SRC_FILES = basic/src/basic.cpp basic/src/main.cpp OOP/src/Car.cpp OOP/src/Integer.cpp OOP/src/Number.cpp OOP/src/Project.cpp
 OBJ_FILES = $(SRC_FILES:.cpp=.o)
 
 # Include directories
