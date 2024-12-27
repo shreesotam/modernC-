@@ -1,5 +1,6 @@
 #include "basic.h"
 #include <iostream>
+#include "Checking.h"
 
 
 int Add(int *a, int *b)
@@ -136,6 +137,18 @@ void Transact(Account *acc)
     acc->Deposite(100);
     std::cout<<"after deposite bal: "<<acc->GetBalance()<<"\n";
     acc->AccumlateInterest();
+    if(typeid(*acc)==typeid(Checking))
+    {
+        Checking *chck = static_cast<Checking*>(acc); //down casting by checking the type
+    }
+    /*
+    dynamic cast
+    Checking *chck = dynamic_cast<Checking*>(acc);
+    if(chck !=nullptr)
+    {
+        do stuff
+    }
+    */
     acc->Withdraw(170);
     std::cout<<"final bal: "<<acc->GetBalance()<<"\n";
 }
