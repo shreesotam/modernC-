@@ -9,7 +9,7 @@ class Saving : public Account
     Saving(const std::string &name, float balance, float rate);
     ~Saving();
 
-    void AccumlateInterest();
-    float GetInerest()const;
+    void AccumlateInterest()override;
+    float GetInerest()const override;
 
 };
