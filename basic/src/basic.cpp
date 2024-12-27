@@ -1,6 +1,7 @@
 #include "basic.h"
 #include <iostream>
 
+
 int Add(int *a, int *b)
 {
     int result = *a+*b;
@@ -68,21 +69,43 @@ Number CreateNumber(int num)
     return n;
 }
 
+Integer operator +(int val, const Integer &y)
+{
+    Integer temp;
+    temp.SetValue(val+y.GetValue());
+    return temp;
+}
+std::ostream & operator<<(std::ostream &out, const Integer &a)
+{
+    out << a.GetValue();
+    return out;
+}
+
+std::istream & operator >>(std::istream &input, const Integer &a)
+{
+    int x;
+    input>>x;
+    *a.mPInt =x;
+    return input;
+}
+
 void operate(int val)
 {
-    Integer *p = Getpointer(val);
+    std::unique_ptr<Integer>p{Getpointer(val)};
     if (p==nullptr)
     {
-        p = new Integer{val};
+        //p = new Integer{val};
+        p.reset(new Integer{val});
     }
     p->SetValue(100);
-    Display(p);
-    delete p;
-    p =nullptr;
-    p = new Integer{};
+    Display(p.get());
+    //p =nullptr;
+    //p = new Integer{};
+    p.reset(new Integer{val});
     *p =__LINE__;
-    Display(p);
-    delete p;
+    Display(p.get());
+    Store(std::move(p));
+    
 
 }
 
@@ -99,4 +122,9 @@ void Display(Integer *p)
         return;
     }
     std::cout<<p->GetValue()<<std::endl;
+}
+
+void Store(std::unique_ptr<Integer> p)
+{
+    std::cout<<"storing"<<p->GetValue()<<"\n";
 }
