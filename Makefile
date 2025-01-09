@@ -14,7 +14,7 @@ SRC_FILES = basic/src/basic.cpp basic/src/main.cpp OOP/src/Car.cpp OOP/src/Integ
 OBJ_FILES = $(SRC_FILES:.cpp=.o)
 
 # Include directories
-INC_DIRS = basic/inc OOP/inc OOP/Bank/inc
+INC_DIRS = basic/inc OOP/inc OOP/Bank/inc STL/inc
 INC_FLAGS = $(addprefix -I, $(INC_DIRS))
 
 # Default target
